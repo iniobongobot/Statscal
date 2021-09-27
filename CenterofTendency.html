@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Measures of Central Tendency - StatsCal.com</title>
+	<meta name="description" content="Built by an Analyst for Students! Free alternative To The other paid statistics packages. Enter your data and it generates descriptive statistics. ">
+	<meta name="keywords" content="mean, mode, median, 5-number summary, standard deviation, variance, range">
+	<script src="MathsHelp.js" type="text/javascript"></script>
+	<link rel="stylesheet" type="text/css" href="MathsHelp.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.13.5/xlsx.full.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.13.5/jszip.js"></script>
+	<script type="text/javascript" src="upload1.js"></script>
+</head>
+<body>
+	<header>
+		<nav>
+			<a class="homeabout" href="index.html">HOME</a>
+			<a class="homeabout" href="about.html">AUTHOR</a>
+			<a class="homeabout" href="Extra.html">EXTRA</a>
+			<div>
+				<button>+</button>
+				<div >
+					<a class="btndropdown" href="Z-Scores.html">Z-Scores</a>
+					<a class="btndropdown" href="Confidence_Interval.html">Confidence Interval</a>
+					<a class="btndropdown" href="Permutation.html">Permutation And Combination</a>
+					<a class="btndropdown" href="T-Table.html">T-Table Scores</a>
+					<a class="btndropdown" href="Chi-Square.html">Chi-Square</a>
+					<a class="btndropdown" href="LinearRegression.html">Linear Regression</a>
+					<a class="btndropdown" href="ProbabilityCalculator.html">Probability</a>
+					<a class="btndropdown" href="Trigonometry.html">Trigonometry</a>
+					<a class="btndropdown" href="Quadratic.html">Quadratic</a>
+					<a class="btndropdown" href="BinomialDistribution.html">Binomial Distribution</a>
+				</div>
+			</div>
+		</nav>
+	</header>
+	<main>
+		<section class="calculate">
+			<H1>Measure of Central Tendency and Dispersion</H1>
+			<fieldset>
+			<Legend>Enter Each Number Seperated by a Comma (,)</legend>
+			<textarea id="mean" name="mean" rows="5" cols="40" placeholder="1,2,3,4,5..." required></textarea>	
+		</br>
+			<button onclick="ReturnVal(); drawChart()" class="half">Get Values</button>
+			<button onclick="reset()" class="half">Reset</button>
+					
+			
+		</br><hr>
+				<h2>Or Upload an excel file.</h2>
+				<input type="file" id="fileUpload" />
+				
+			<em style="color:blue">To make use of the upload feature, ensure that cell A1 has the value <span style="font-size:20px">'COT'</span>.</em></br>
+				<button onclick="Upload2()"  class="half">Upload</button>
+				<button onclick="reset()" class="half">Reset</button>
+				
+			</fieldset>
+			<p id="answer"> </p>
+			<div id="curve_chart" style="width: 100%; height: 500px; display: none"></div>
+			<p id="answer3"></p>
+		</section>
+
+		<section>
+			<H1>Grouped Frequency Distribution</H1>
+			<fieldset>
+			<Legend>Enter Each Number Seperated by a Comma (,)</legend>
+			<p>RANGE</p><em>seperate the lower and upper range with a hyphen (-)</em>
+			<textarea id="range" name="range" rows="5" cols="2" required placeholder="1-10,11-20,21-30..."></textarea>	
+			<p>FREQUENCY</p>
+			<textarea id="freq" name="freq" rows="5" cols="2" required placeholder="1,2,3,4,5..."></textarea>
+		</br>
+			<button onclick="GrpFreq()" class="half">Get Values</button>
+			<button onclick="reset()" class="half">Reset</button>
+			
+			
+			
+		</br>
+		
+		<hr>
+				<h2>Or Upload an excel file.</h2>
+				<input type="file" id="fileUpload2"  /></br>
+				
+			<em style="color:blue">To make use of the upload feature for Linear regression, ensure that cell A1 has the value <span style="font-size:20px">'Range'</span> and cell B1 has the Value <span style="font-size:20px">'Frequency'</span>.</em></br>
+				<button onclick="Upload1()"  class="half">Upload</button>
+				<button onclick="reset()" class="half">Reset</button>
+				
+				
+			</fieldset>
+			<p id="answer1"> </p>
+			<p id="answer2"></p>
+		</section>
+	</main>
+	<footer>
+		<div>Thank you for visiting and making use of this site. Please donate to paypal:iniobongobot@gmail.com to support.</div>
+	</footer>
+</body>
+</html>
+<script type="text/javascript">
+	google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+      var xax= document.getElementById('mean').value;
+      xax=xax.split(",");
+      var arr = [['Title','Length']]
+      var xmax=0;
+      for (var i=0; i<xax.length; i++){
+      	xaxw = parseFloat(xax[i]);
+      	arr.push(["a"+i, xaxw]);
+        if (xaxw>xmax){
+      		xmax=xaxw
+  		}
+      }
+      var data = google.visualization.arrayToDataTable(arr);
+
+        var options = {
+          title: 'Histogram',
+          legend: { position: 'none' },
+        };
+
+        var chart = new google.visualization.Histogram(document.getElementById('curve_chart'));
+
+        chart.draw(data, options);
+      }
+</script>
+<style type="text/css">
+	#curve_chart{
+		width:80%;
+		margin: 0;
+		padding: 0;
+	}
+</style>

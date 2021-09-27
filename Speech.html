@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+ 
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+        <meta http-equiv="Pragma" content="no-cache" />
+        <meta http-equiv="Expires" content="0" />
+        <title>Speech to text conversion using JavaScript</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="MathsHelp.css">
+ 		
+    </head>
+ 
+    <body>
+        <fieldset><legend>Ask the Magic 8 Ball</legend>
+        <div class="mycontainer">
+ 
+            <h1>Speech to text conversion using JavaScript</h1>
+ 
+            <div class="mywebapp"> 
+                <div class="input">
+                    <textarea id="textbox" rows="10" cols="30" ></textarea>
+                </div>         
+                <button id="start-btn" title="Start" onclick="start()">Talk</button>
+                </br><button onclick='Magic8()'>Ask the 8 Ball</button>
+                <button onclick="lear()">Clear</button>
+                <p id="instructions">Press the Start button</p>
+            </div>
+        </div>
+				
+			</fieldset></br>
+			<p id='answer'></p>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="Magic8.js"></script>
+    </body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Binomial Distribution - StatsCal.com</title>
+	<meta name="description" content="Built by an Analyst for Students! Free alternative To The other paid statistics packages. Enter your data and it generates descriptive statistics. ">
+	<meta name="keywords" content="mean, mode, median, 5-number summary, standard deviation, variance, range">
+	<script src="MathsHelp.js" type="text/javascript"></script>
+	<link rel="stylesheet" type="text/css" href="MathsHelp.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+	<header>
+		<nav>
+			<a class="homeabout" href="index.html">HOME</a>
+			<a class="homeabout" href="about.html">AUTHOR</a>
+			<a class="homeabout" href="Extra.html">EXTRA</a>
+			<div>
+				<button>+</button>
+				<div >
+					<a class="btndropdown" href="CenterofTendency.html">Measure of Central Tendency</a>
+					<a class="btndropdown" href="Z-Scores.html">Z-Scores</a>
+					<a class="btndropdown" href="Confidence_Interval.html">Confidence Interval</a>
+					<a class="btndropdown" href="Permutation.html">Permutation And Combination</a>
+					<a class="btndropdown" href="T-Table.html">T-Table Scores</a>
+					<a class="btndropdown" href="Chi-Square.html">Chi-Square</a>
+					<a class="btndropdown" href="LinearRegression.html">Linear Regression</a>
+					<a class="btndropdown" href="ProbabilityCalculator.html">Probability</a>
+					<a class="btndropdown" href="Trigonometry.html">Trigonometry</a>
+					<a class="btndropdown" href="Quadratic.html">Quadratic</a>
+
+				</div>
+			</div>
+		</nav>
+	</header>
+	<main>
+		<section class="calculate">
+			<H1>Binomial Distribution</H1>
+			<fieldset>
+			<Legend>Enter a value in each of the three text boxes</legend>
+				<label>Number of trials: <input type="number" class="binom" name=""></label></br>
+				<label>Number of successes (x): <input type="number" class="binom" name=""></label></br>
+				<label>Probability of success on a single trial: <em>Input a number between 0 and 1. </br></em><input type="number" class="binom" name="" min="0.0" max="1.0"></label></br>
+			<button onclick="binom()"  class="half">Calculate</button>
+			<button onclick="reset()"  class="half">Reset</button>
+			<a href="Binomial_Probabilities.pdf" target="#_blank"><button>Use Binomial Table</button></a>
+								
+			</fieldset>
+			<p id="answer"> </p>
+			
+		</section>
+	
+	
+	</main>
+	<footer>
+		<div>Thank you for visiting and making use of this site. Please donate to paypal:iniobongobot@gmail.com to support.</div>
+	</footer>
+</body>
+</html>
+<style type="text/css">
+	footer{
+		bottom:-100px;
+	}
+</style>
+<script type="text/javascript">
+	function reset(){
+	document.getElementsByClassName('binom')[0].value="";
+	document.getElementsByClassName('binom')[1].value="";
+	document.getElementsByClassName('binom')[2].value="";
+	document.getElementById('answer').innerHTML="";
+}
+</script>

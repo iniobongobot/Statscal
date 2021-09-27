@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Statistics  - StatsCal.com</title>
+	<meta name="description" content="Built by Analysts for Analysts! Free alternative To The descriptive statistics view in Minitab and other paid statistics packages. Enter your data and it generates descriptive statistics. ">
+	<script src="Extra.js" type="text/javascript"></script>
+	<link rel="stylesheet" type="text/css" href="MathsHelp.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+	<header>
+		<nav>
+			<a class="homeabout" href="index.html">HOME</a>
+			<a class="homeabout" href="Extra.html">EXTRA</a>
+			<div>
+				<button>+</button>
+				<div >
+					<a class="btndropdown" href="CenterofTendency.html">Measure of Central Tendency</a>
+					<a class="btndropdown" href="Z-Scores.html">Z-Scores</a>
+					<a class="btndropdown" href="Confidence_Interval.html">Confidence Interval</a>
+					<a class="btndropdown" href="Permutation.html">Permutation And Combination</a>
+					<a class="btndropdown" href="T-Table.html">T-Table Scores</a>
+					<a class="btndropdown" href="Chi-Square.html">Chi-Square</a>
+					<a class="btndropdown" href="LinearRegression.html">Linear Regression</a>
+					<a class="btndropdown" href="ProbabilityCalculator.html">Probability</a>
+					<a class="btndropdown" href="Trigonometry.html">Trigonometry</a>
+					<a class="btndropdown" href="Quadratic.html">Quadratic</a>
+					<a class="btndropdown" href="BinomialDistribution.html">Binomial Distribution</a>
+				</div>
+			</div>
+		</nav>
+	</header>
+	<main>
+		<section>
+			<H2>Calculator</H2>
+			<p id="alert"></p>
+			<table id="calculator">
+			<tr>
+			<td><input type="button" value="c" onclick="clr()"/> </td>
+			<td colspan="4"><input type="text" id="edu"/></td>
+			<td><input type="button" value="^2" onclick="dis('**2')"/> </td>
+			<td><input type="button" value="sqrt" onclick="dis('Math.sqrt('); ale()"/> </td>
+<!-- clr() function will call clr to clear all value -->
+			</tr>
+			<tr>
+<!-- creating buttons and assigning values-->
+			<td><input type="button" value="PI" onclick="dis('Math.PI')"/></td>
+			<td><input type="button" value="1" onclick="dis('1')"/> </td>
+			<td><input type="button" value="2" onclick="dis('2')"/> </td>
+			<td><input type="button" value="3" onclick="dis('3')"/> </td>
+			<td><input type="button" value="+" onclick="dis('+')"/> </td>
+			<td><input type="button" value="^" onclick="dis('**')"/> </td>
+			<td><input type="button" value="cos" onclick="dis('Math.cos('); ale()"/> </td>
+			</tr>
+			<tr>
+			<td><input type="button" value="log" onclick="dis('Math.log('); ale()"/> </td>
+			<td><input type="button" value="4" onclick="dis('4')"/> </td>
+			<td><input type="button" value="5" onclick="dis('5')"/> </td>
+			<td><input type="button" value="6" onclick="dis('6')"/> </td>
+			<td><input type="button" value="-" onclick="dis('-')"/> </td>
+			<td><input type="button" value="(" onclick="dis('(')"/> </td>
+			<td><input type="button" value="sin" onclick="dis('Math.sin('); ale()"/> </td>
+			</tr>
+			<tr>
+			<td><input type="button" value="exp" onclick="dis('Math.exp('); ale()"/> </td>
+			<td><input type="button" value="7" onclick="dis('7')"/> </td>
+			<td><input type="button" value="8" onclick="dis('8')"/> </td>
+			<td><input type="button" value="9" onclick="dis('9')"/> </td>
+			<td><input type="button" value="*" onclick="dis('*')"/> </td>
+			<td><input type="button" value=")" onclick="dis(')')"/> </td>
+			<td><input type="button" value="E" onclick="dis('Math.E')"/> </td>
+			</tr>
+			<tr>
+			<td><input type="button" value="LN2" onclick="dis('Math.LN2('); ale()"/> </td>
+			<td><input type="button" value="." onclick="dis('.')"/> </td>
+			<td><input type="button" value="0" onclick="dis('0')"/> </td>
+			<td><input type="button" value="/" onclick="dis('/')"/> </td>
+			<td><input type="button" value="%" onclick="dis('/100')"/> </td>
+<!-- Evaluating function call eval()-->
+			<td><input type="button" value="=" onclick="solve()"/> </td>
+			<td><input type="button" value="tan" onclick="dis('Math.tan('); ale()"/> </td>
+			</tr>
+			</table>
+		</section>
+		<hr>
+		<section>
+			<h1>Rounding Numbers Calculator</h1>
+			<fieldset>
+				<label>Round: <input type="number" name="roundNum" id="roundNum"></label>
+				<label> To:
+					<select id="roundTo">
+						<optgroup label="Whole Number Places">
+                             <option value="0">Ones Place (Whole Numbers)</option>
+                                                </optgroup>
+						<optgroup label="Decimal Places">
+                             <option value="1">Tenths (1 decimal place)</option>
+                            <option value="2" selected="">Hundredths (2 decimals, cents)</option>
+                        	<option value="3">Thousandths (3 decimals)</option>
+                       		<option value="4">Ten Thousandths (4)</option>
+                        	<option value="5">Hundred Thousandths (5)</option>
+                    		<option value="6">Millionths (6)</option>
+                        	<option value="7">Ten Millionths (7)</option>
+                        	<option value="8">Hundred Millionths (8)</option>
+                        	<option value="9">Billionths (9)</option>
+                                                </optgroup>
+					</select>
+					<label>Answer: <input type="number" name="roundOut" id="roundOut"></label>
+				</label>
+				<button onclick="roundTo()">Calculate</button>
+			</fieldset>
+			
+		</section>
+		<hr>
+		<section >
+			<H1>Choose A Game from the dropdown</H1>
+			<fieldset>
+			<select id="MindGame">
+				<option value = 'Nothing' selected="true">Choose A Game from the Dropdown</option>
+				<option value="RPS">Rock, Paper, Scissors</option>
+				<option value="Guess">Guessing Game</option>
+				<option value="Magic">Magic 8 Ball</option>
+			</select>	
+			</br>
+			<button onclick="Extra()">Let's Play</button>
+			</fieldset>
+		</section>
+		
+		<section id="secassign"></section>
+	</main>
+	<footer>
+		<div>Thank you for visiting and making use of this site. Please donate to paypal:iniobongobot@gmail.com to support.</div>
+	</footer>
+</body>
+</html>

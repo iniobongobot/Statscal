@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Statistics  - StatsCal.com</title>
+	<meta name="description" content="Built by Analysts for Students! Free alternative To The descriptive statistics view in Minitab and other paid statistics packages. Enter your data and it generates descriptive statistics. ">
+	<script src="MathsHelp.js" type="text/javascript"></script>
+	 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+	<link rel="stylesheet" type="text/css" href="MathsHelp.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+	<header>
+		<nav>
+			<a class="homeabout" href="index.html">HOME</a>
+			<a class="homeabout" href="about.html">ABOUT</a>
+			<a class="homeabout" href="Extra.html">EXTRA</a>
+			<div>
+				<button>+</button>
+				<div >
+					<a class="btndropdown" href="CenterofTendency.html">Measure of Central Tendency</a>
+					<a class="btndropdown" href="Z-Scores.html">Z-Scores</a>
+					<a class="btndropdown" href="Confidence_Interval.html">Confidence Interval</a>
+					<a class="btndropdown" href="Permutation.html">Permutation And Combination</a>
+					<a class="btndropdown" href="T-Table.html">T-Table Scores</a>
+					<a class="btndropdown" href="Chi-Square.html">Chi-Square</a>
+					<a class="btndropdown" href="LinearRegression.html">Linear Regression</a>
+					<a class="btndropdown" href="ProbabilityCalculator.html">Probability</a>
+					<a class="btndropdown" href="Trigonometry.html">Trigonometry</a>
+					<a class="btndropdown" href="Quadratic.html">Quadratic</a>
+				</div>
+			</div>
+		</nav>
+	</header>
+	<main>
+			<section>
+			<h1>Linear Regression</h1>
+			<fieldset>
+			<Legend>Simple Linear Regression</legend>
+			<label>X-axis</label>
+			<textarea id="Xaxis" cols="50" rows="3"></textarea>
+			</br>
+			<button onclick="drawChart()">Get Values</button>
+			</fieldset>
+			<p id="answer"> </p>
+		</section>
+		<div id="curve_chart" style="width: 100%; height: 500px"></div>
+	</main>
+	<footer>
+		<div>Thank you for visiting and making use of this site. Please donate to paypal:iniobongobot@gmail.com to support.</div>
+	</footer>
+</body>
+</html>
+<script type="text/javascript">
+	google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+      var xax= document.getElementById('Xaxis').value;
+      xax=xax.split(",");
+      var arr = [['Title','Length']]
+      var xmax=0;
+      for (var i=0; i<xax.length; i++){
+      	xaxw = parseFloat(xax[i]);
+      	arr.push(['i', xaxw]);
+        if (xaxw>xmax){
+      		xmax=xaxw
+  		}
+      }
+      console.log(arr);
+        var data = google.visualization.arrayToDataTable(arr);
+
+        var options = {
+          title: 'Histogram',
+          legend: { position: 'none' },
+        };
+
+        var chart = new google.visualization.Histogram(document.getElementById('curve_chart'));
+
+        chart.draw(data, options);
+      }
+</script>
